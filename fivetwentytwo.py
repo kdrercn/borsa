@@ -97,4 +97,5 @@ for x in range(len(c)):
 print(sonuc)
 
 #edited for git
+#again
 
