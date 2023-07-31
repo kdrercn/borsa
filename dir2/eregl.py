@@ -9,7 +9,7 @@ import plotly.graph_objs as go
 import matplotlib.pyplot as plt
 
 
-tupras = yf.Ticker('TUPRS.IS')
+tupras = yf.Ticker('EREGL.IS')
 hist = tupras.history(period='3mo', interval='1h')
 
 from plotly.subplots import make_subplots
@@ -26,7 +26,7 @@ fig3.update_layout(xaxis_rangeslider_visible=False)
 fig3.add_trace(go.Scatter(x=hist.index,y=hist['Close'].ewm(span=5).mean(),marker_color='red',name='5'))
 fig3.add_trace(go.Scatter(x=hist.index,y=hist['Close'].ewm(span=22).mean(),marker_color='green',name='22'))
 fig3.add_trace(go.Bar(x=hist.index, y=hist['Volume'], name='Volume'),secondary_y=True)
-fig3.update_layout(title={'text':'TUPRS', 'x':0.5})
+fig3.update_layout(title={'text':'EREGL', 'x':0.5})
 fig3.update_yaxes(range=[0,1000000000],secondary_y=True)
 fig3.update_yaxes(visible=False, secondary_y=True)
 fig3.update_layout(xaxis_rangeslider_visible=False)  #hide range slider
@@ -95,6 +95,4 @@ for x in range(len(c)):
         sonuc[x] = "AL"
 
 print(sonuc)
-
-
 
